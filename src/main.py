@@ -32,3 +32,12 @@ address_book.add_contact(person1)
 print("\nContact Added Successfully!\n")
 
 address_book.display_contact()
+
+choice = input("\nDo you want to edit the contact? (yes/no): ")
+
+if choice.lower() == "yes":
+    first_name = input("Enter First Name of the Contact to Edit: ")
+    address_book.edit_contact(first_name)
+
+    print("\nUpdated Contact Details:\n")
+    address_book.display_contact()
