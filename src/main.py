@@ -4,15 +4,11 @@ from model.person import Person
 print(" Welcome to Address Book Program  ._. 📖 ")
 
 
-person1 = Person(
-    "Amarnath",
-    "Kolla",
-    "chennai",
-    "chennai",
-    "TN",
-    "517501",
-    "9876543210",
-    "amartyuiop@.com"
-)
-
-person1.display()
+first_name = input("Enter First Name : ")
+last_name = input("Enter Last Name  : ")
+address = input("Enter Address    : ")
+city = input("Enter City       : ")
+state = input("Enter State      : ")
+zip_code = input("Enter Zip Code   : ")
+phone = input("Enter Phone      : ")
+email = input("Enter Email      : ")
