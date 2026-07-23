@@ -29,7 +29,7 @@ def edit_contact(self, first_name):
         self.contact.email = input("Enter New Email: ")
 
         print("\nContact Updated Successfully!")
+        return
 
-    else:
-        print("Contact Not Found.")
+    print("Contact Not Found.")
 
