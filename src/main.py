@@ -1,4 +1,5 @@
 from model.person import Person
+from model.addressbook import AddressBook
 
 
 print(" Welcome to Address Book Program  ._. 📖 ")
@@ -24,6 +25,10 @@ person1 = Person(
     email
 )
 
+address_book = AddressBook()
+
+address_book.add_contact(person1)
+
 print("\nContact Added Successfully!\n")
 
-person1.display()
+address_book.display_contact()
