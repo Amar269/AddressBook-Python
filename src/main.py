@@ -2,7 +2,7 @@ from model.person import Person
 from model.addressbook import AddressBook
 
 
-print(" Welcome to Address Book Program  ._. 📖 ")
+print(" Welcome to Address Book ._. 📖 ")
 
 
 first_name = input("Enter First Name : ")
