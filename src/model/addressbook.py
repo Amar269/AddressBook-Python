@@ -33,3 +33,15 @@ def edit_contact(self, first_name):
 
     print("Contact Not Found.")
 
+def delete_contact(self, first_name):
+
+    if self.contact is None:
+        print("No Contact Found.")
+        return
+
+    if self.contact.first_name == first_name:
+        self.contact = None
+        print("\nContact Deleted Successfully!")
+        return
+
+    print("Contact Not Found.")
