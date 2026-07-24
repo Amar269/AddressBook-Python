@@ -1,9 +1,16 @@
 from model.person import Person
 from model.addressbook import AddressBook
+from model.addressbooksystem import AddressBookSystem
 
 print(" Welcome to Address Book ._. 📖 ")
 
-address_book = AddressBook()
+system = AddressBookSystem()
+
+book_name = input("Enter Address Book Name : ")
+
+system.create_address_book(book_name)
+
+address_book = system.get_address_book(book_name)
 
 while True:
 
