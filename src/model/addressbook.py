@@ -4,9 +4,13 @@ class AddressBook:
         self.contacts = []
 
     def add_contact(self, person):
+        for contact in self.contacts:
+            if (contact.first_name == person.first_name and
+                contact.last_name == person.last_name):
+                print("Duplicate Contact Found. Contact Not Added.")
+            return
         self.contacts.append(person)
-        print("\nContact Added Successfully!")
-
+    print("\nContact Added Successfully!")
     def display_contact(self):
 
         if len(self.contacts) == 0:
