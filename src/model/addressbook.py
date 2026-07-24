@@ -40,9 +40,9 @@ class AddressBook:
 
                 while True:
 
-                    print("\n===================================")
+                    print("\n------------------------------------")
                     print("         EDIT CONTACT")
-                    print("===================================")
+                    print("--------------------------------------")
                     print("1. Edit Last Name")
                     print("2. Edit Address")
                     print("3. Edit City")
@@ -52,7 +52,7 @@ class AddressBook:
                     print("7. Edit Email")
                     print("8. Edit All")
                     print("9. Back")
-                    print("===================================")
+                    print("---------------------------------------")
 
                     try:
 
