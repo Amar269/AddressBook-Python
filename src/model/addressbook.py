@@ -62,3 +62,27 @@ class AddressBook:
                 return
 
         print("Contact Not Found.")
+
+    def search_by_city(self, city):
+        found = False
+        for person in self.contacts:
+        
+                if person.city.lower() == city.lower():
+                    person.display()
+                    found = True
+                if not found:
+                    print("No Contact Found.")
+def search_by_state(self, state):
+
+    found = False
+
+    for person in self.contacts:
+
+        if person.state.lower() == state.lower():
+            person.display()
+            found = True
+
+    if not found:
+        print("No Contact Found.")
+        
+           
