@@ -1,10 +1,7 @@
 from model.person import Person
 from model.addressbooksystem import AddressBookSystem
 
-print("========================================")
 print("      Welcome to Address Book ._. 📖")
-print("========================================")
-
 system = AddressBookSystem()
 
 book_name = input("Enter Address Book Name : ")
@@ -14,10 +11,8 @@ system.create_address_book(book_name)
 address_book = system.get_address_book(book_name)
 
 while True:
-
-    print("\n========================================")
     print("          ADDRESS BOOK MENU")
-    print("========================================")
+    print("-------------------------------------")
     print("1. Add Contact")
     print("2. Display Contacts")
     print("3. Edit Contact")
@@ -27,7 +22,7 @@ while True:
     print("7. View Contacts By City")
     print("8. View Contacts By State")
     print("9. Exit")
-    print("========================================")
+    print("______________________________________")
 
     try:
 

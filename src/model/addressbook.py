@@ -22,7 +22,7 @@ class AddressBook:
             print("No Contact Found.")
             return
 
-        print("\n========== Contact List ==========")
+        print("\n -: Contact List :- ")
 
         for person in self.contacts:
             person.display()
