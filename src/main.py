@@ -1,8 +1,9 @@
 from model.person import Person
-from model.addressbook import AddressBook
 from model.addressbooksystem import AddressBookSystem
 
-print(" Welcome to Address Book ._. 📖 ")
+print("========================================")
+print("      Welcome to Address Book ._. 📖")
+print("========================================")
 
 system = AddressBookSystem()
 
@@ -12,104 +13,96 @@ system.create_address_book(book_name)
 
 address_book = system.get_address_book(book_name)
 
-
-
 while True:
 
-    first_name = input("\nEnter First Name : ")
-    last_name = input("Enter Last Name  : ")
-    address = input("Enter Address    : ")
-    city = input("Enter City       : ")
-    state = input("Enter State      : ")
-    zip_code = input("Enter Zip Code   : ")
-    phone = input("Enter Phone      : ")
-    email = input("Enter Email      : ")
+    print("\n========================================")
+    print("          ADDRESS BOOK MENU")
+    print("========================================")
+    print("1. Add Contact")
+    print("2. Display Contacts")
+    print("3. Edit Contact")
+    print("4. Delete Contact")
+    print("5. Search By City")
+    print("6. Search By State")
+    print("7. View Contacts By City")
+    print("8. View Contacts By State")
+    print("9. Exit")
+    print("========================================")
 
-    person = Person(
-        first_name,
-        last_name,
-        address,
-        city,
-        state,
-        zip_code,
-        phone,
-        email
-    )
+    try:
 
-    address_book.add_contact(person)
+        choice = int(input("Enter Your Choice : "))
 
-    choice = input("\nDo you want to add another contact? (yes/no): ")
+        if choice == 1:
 
-    if choice.lower() != "yes":
-        break
+            first_name = input("Enter First Name : ")
+            last_name = input("Enter Last Name  : ")
+            address = input("Enter Address    : ")
+            city = input("Enter City       : ")
+            state = input("Enter State      : ")
+            zip_code = input("Enter Zip Code   : ")
+            phone = input("Enter Phone      : ")
+            email = input("Enter Email      : ")
 
+            person = Person(
+                first_name,
+                last_name,
+                address,
+                city,
+                state,
+                zip_code,
+                phone,
+                email
+            )
 
+            address_book.add_contact(person)
 
-print("\nAll Contacts:")
-address_book.display_contact()
+        elif choice == 2:
 
+            print("\nContact List")
+            address_book.display_contact()
 
+        elif choice == 3:
 
-choice = input("\nDo you want to edit a contact? (yes/no): ")
+            first_name = input("Enter First Name to Edit : ")
+            address_book.edit_contact(first_name)
 
-if choice.lower() == "yes":
+        elif choice == 4:
 
-    first_name = input("Enter First Name to Edit: ")
+            first_name = input("Enter First Name to Delete : ")
+            address_book.delete_contact(first_name)
 
-    address_book.edit_contact(first_name)
+        elif choice == 5:
 
-    print("\nUpdated Contact List:")
-    address_book.display_contact()
+            city = input("Enter City : ")
+            print("\nContacts Found")
+            address_book.search_by_city(city)
 
+        elif choice == 6:
 
+            state = input("Enter State : ")
+            print("\nContacts Found")
+            address_book.search_by_state(state)
 
-choice = input("\nDo you want to delete a contact? (yes/no): ")
+        elif choice == 7:
 
-if choice.lower() == "yes":
+            print("\nContacts Grouped By City")
+            address_book.view_by_city()
 
-    first_name = input("Enter First Name to Delete: ")
+        elif choice == 8:
 
-    address_book.delete_contact(first_name)
+            print("\nContacts Grouped By State")
+            address_book.view_by_state()
 
-    print("\nUpdated Contact List:")
-    address_book.display_contact()
+        elif choice == 9:
 
+            print("\nThank You for Using Address Book 📖")
+            break
 
+        else:
 
-choice = input("\nDo you want to search contacts by City? (yes/no): ")
+            print("Invalid Choice. Please Try Again.")
 
-if choice.lower() == "yes":
+    except ValueError:
 
-    city = input("Enter City: ")
-
-    print("\nContacts Found:\n")
-
-    address_book.search_by_city(city)
-
-
-
-choice = input("\nDo you want to search contacts by State? (yes/no): ")
-
-if choice.lower() == "yes":
-
-    state = input("Enter State: ")
-
-    print("\nContacts Found:\n")
-
-    address_book.search_by_state(state)
-
-choice = input("\nDo you want to view contacts by City? (yes/no): ")
-
-if choice.lower() == "yes":
-
-    print("\nContacts Grouped By City")
-
-    address_book.view_by_city()
-
-choice = input("\nDo you want to view contacts by State? (yes/no): ")
-
-if choice.lower() == "yes":
-
-    print("\nContacts Grouped By State")
-
-    address_book.view_by_state()
+        print("Invalid Input. Please Enter Numbers Only.")

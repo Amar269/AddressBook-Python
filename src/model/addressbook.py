@@ -22,7 +22,7 @@ class AddressBook:
             print("No Contact Found.")
             return
 
-        print("\nContact List")
+        print("\n========== Contact List ==========")
 
         for person in self.contacts:
             person.display()
@@ -36,17 +36,81 @@ class AddressBook:
 
         for person in self.contacts:
 
-            if person.first_name == first_name:
+            if person.first_name.lower() == first_name.lower():
 
-                person.last_name = input("Enter New Last Name: ")
-                person.address = input("Enter New Address: ")
-                person.city = input("Enter New City: ")
-                person.state = input("Enter New State: ")
-                person.zip_code = input("Enter New Zip Code: ")
-                person.phone = input("Enter New Phone: ")
-                person.email = input("Enter New Email: ")
+                while True:
 
-                print("\nContact Updated Successfully!")
+                    print("\n===================================")
+                    print("         EDIT CONTACT")
+                    print("===================================")
+                    print("1. Edit Last Name")
+                    print("2. Edit Address")
+                    print("3. Edit City")
+                    print("4. Edit State")
+                    print("5. Edit Zip Code")
+                    print("6. Edit Phone")
+                    print("7. Edit Email")
+                    print("8. Edit All")
+                    print("9. Back")
+                    print("===================================")
+
+                    try:
+
+                        choice = int(input("Enter Choice : "))
+
+                        if choice == 1:
+
+                            person.last_name = input("Enter New Last Name : ")
+
+                        elif choice == 2:
+
+                            person.address = input("Enter New Address : ")
+
+                        elif choice == 3:
+
+                            person.city = input("Enter New City : ")
+
+                        elif choice == 4:
+
+                            person.state = input("Enter New State : ")
+
+                        elif choice == 5:
+
+                            person.zip_code = input("Enter New Zip Code : ")
+
+                        elif choice == 6:
+
+                            person.phone = input("Enter New Phone : ")
+
+                        elif choice == 7:
+
+                            person.email = input("Enter New Email : ")
+
+                        elif choice == 8:
+
+                            person.last_name = input("Enter New Last Name : ")
+                            person.address = input("Enter New Address : ")
+                            person.city = input("Enter New City : ")
+                            person.state = input("Enter New State : ")
+                            person.zip_code = input("Enter New Zip Code : ")
+                            person.phone = input("Enter New Phone : ")
+                            person.email = input("Enter New Email : ")
+
+                        elif choice == 9:
+
+                            return
+
+                        else:
+
+                            print("Invalid Choice")
+                            continue
+
+                        print("\nContact Updated Successfully!")
+
+                    except ValueError:
+
+                        print("Please Enter Numbers Only.")
+
                 return
 
         print("Contact Not Found.")
@@ -59,7 +123,7 @@ class AddressBook:
 
         for person in self.contacts:
 
-            if person.first_name == first_name:
+            if person.first_name.lower() == first_name.lower():
 
                 self.contacts.remove(person)
 
@@ -77,6 +141,7 @@ class AddressBook:
             if person.city.lower() == city.lower():
 
                 person.display()
+                print("--------------------------")
                 found = True
 
         if not found:
@@ -91,6 +156,7 @@ class AddressBook:
             if person.state.lower() == state.lower():
 
                 person.display()
+                print("--------------------------")
                 found = True
 
         if not found:
