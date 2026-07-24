@@ -1,47 +1,60 @@
 class AddressBook:
 
     def __init__(self):
-        self.contact = None
+        self.contacts = []
 
     def add_contact(self, person):
-        self.contact = person
+        self.contacts.append(person)
+        print("\nContact Added Successfully!")
 
     def display_contact(self):
-        if self.contact:
-            self.contact.display()
-        else:
+
+        if len(self.contacts) == 0:
             print("No Contact Found.")
+            return
 
-def edit_contact(self, first_name):
+        print("\n Contact List ")
 
-    if self.contact is None:
-        print("No Contact Found.")
-        return
+        for person in self.contacts:
+            person.display()
+            print("--------------------------")
 
-    if self.contact.first_name == first_name:
+    def edit_contact(self, first_name):
 
-        self.contact.last_name = input("Enter New Last Name: ")
-        self.contact.address = input("Enter New Address: ")
-        self.contact.city = input("Enter New City: ")
-        self.contact.state = input("Enter New State: ")
-        self.contact.zip_code = input("Enter New Zip Code: ")
-        self.contact.phone = input("Enter New Phone: ")
-        self.contact.email = input("Enter New Email: ")
+        if len(self.contacts) == 0:
+            print("No Contact Found.")
+            return
 
-        print("\nContact Updated Successfully!")
-        return
+        for person in self.contacts:
 
-    print("Contact Not Found.")
+            if person.first_name == first_name:
 
-def delete_contact(self, first_name):
+                person.last_name = input("Enter New Last Name: ")
+                person.address = input("Enter New Address: ")
+                person.city = input("Enter New City: ")
+                person.state = input("Enter New State: ")
+                person.zip_code = input("Enter New Zip Code: ")
+                person.phone = input("Enter New Phone: ")
+                person.email = input("Enter New Email: ")
 
-    if self.contact is None:
-        print("No Contact Found.")
-        return
+                print("\nContact Updated Successfully!")
+                return
 
-    if self.contact.first_name == first_name:
-        self.contact = None
-        print("\nContact Deleted Successfully!")
-        return
+        print("Contact Not Found.")
 
-    print("Contact Not Found.")
+    def delete_contact(self, first_name):
+
+        if len(self.contacts) == 0:
+            print("No Contact Found.")
+            return
+
+        for person in self.contacts:
+
+            if person.first_name == first_name:
+
+                self.contacts.remove(person)
+
+                print("\nContact Deleted Successfully!")
+                return
+
+        print("Contact Not Found.")
