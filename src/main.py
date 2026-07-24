@@ -97,3 +97,19 @@ if choice.lower() == "yes":
     print("\nContacts Found:\n")
 
     address_book.search_by_state(state)
+
+choice = input("\nDo you want to view contacts by City? (yes/no): ")
+
+if choice.lower() == "yes":
+
+    print("\nContacts Grouped By City")
+
+    address_book.view_by_city()
+
+choice = input("\nDo you want to view contacts by State? (yes/no): ")
+
+if choice.lower() == "yes":
+
+    print("\nContacts Grouped By State")
+
+    address_book.view_by_state()

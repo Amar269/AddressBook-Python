@@ -4,20 +4,25 @@ class AddressBook:
         self.contacts = []
 
     def add_contact(self, person):
+
         for contact in self.contacts:
+
             if (contact.first_name == person.first_name and
-                contact.last_name == person.last_name):
+                    contact.last_name == person.last_name):
+
                 print("Duplicate Contact Found. Contact Not Added.")
-            return
+                return
+
         self.contacts.append(person)
-    print("\nContact Added Successfully!")
+        print("\nContact Added Successfully!")
+
     def display_contact(self):
 
         if len(self.contacts) == 0:
             print("No Contact Found.")
             return
 
-        print("\n Contact List ")
+        print("\nContact List")
 
         for person in self.contacts:
             person.display()
@@ -64,25 +69,73 @@ class AddressBook:
         print("Contact Not Found.")
 
     def search_by_city(self, city):
+
         found = False
+
         for person in self.contacts:
-        
-                if person.city.lower() == city.lower():
-                    person.display()
-                    found = True
-                if not found:
-                    print("No Contact Found.")
-def search_by_state(self, state):
 
-    found = False
+            if person.city.lower() == city.lower():
 
-    for person in self.contacts:
+                person.display()
+                found = True
 
-        if person.state.lower() == state.lower():
-            person.display()
-            found = True
+        if not found:
+            print("No Contact Found.")
 
-    if not found:
-        print("No Contact Found.")
-        
-           
+    def search_by_state(self, state):
+
+        found = False
+
+        for person in self.contacts:
+
+            if person.state.lower() == state.lower():
+
+                person.display()
+                found = True
+
+        if not found:
+            print("No Contact Found.")
+
+    def view_by_city(self):
+
+        if len(self.contacts) == 0:
+            print("No Contact Found.")
+            return
+
+        cities = []
+
+        for person in self.contacts:
+
+            if person.city not in cities:
+                cities.append(person.city)
+
+        for city in cities:
+
+            print(f"\nCity : {city}")
+
+            for person in self.contacts:
+
+                if person.city == city:
+                    print(f"{person.first_name} {person.last_name}")
+
+    def view_by_state(self):
+
+        if len(self.contacts) == 0:
+            print("No Contact Found.")
+            return
+
+        states = []
+
+        for person in self.contacts:
+
+            if person.state not in states:
+                states.append(person.state)
+
+        for state in states:
+
+            print(f"\nState : {state}")
+
+            for person in self.contacts:
+
+                if person.state == state:
+                    print(f"{person.first_name} {person.last_name}")
