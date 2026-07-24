@@ -41,3 +41,14 @@ if choice.lower() == "yes":
 
     print("\nUpdated Contact Details:\n")
     address_book.display_contact()
+
+
+choice = input("\nDo you want to delete the contact? (yes/no): ")
+
+if choice.lower() == "yes":
+    first_name = input("Enter First Name of the Contact to Delete: ")
+
+    address_book.delete_contact(first_name)
+
+    print("\nCurrent Address Book:\n")
+    address_book.display_contact()
